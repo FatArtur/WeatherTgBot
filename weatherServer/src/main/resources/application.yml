@@ -1,0 +1,11 @@
+weather:
+  weatherUrl: https://api.openweathermap.org/data/2.5/weather?q=%s&lang=ru&units=metric&appid=%s
+  weatherByDayUrl: https://api.openweathermap.org/data/2.5/forecast/daily?q=%s&lang=ru&units=metric&cnt=%s&appid=%s
+  key: -----------------------
+
+spring:
+  main:
+    log-startup-info: true
+
+server:
+  port: 8081
