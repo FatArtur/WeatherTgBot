@@ -1,0 +1,33 @@
+plugins {
+    id 'idea'
+    id "io.spring.dependency-management" version "1.0.11.RELEASE"
+}
+
+idea {
+    project {
+        languageLevel = 17
+    }
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+allprojects {
+    group "ru.afatikhov"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    apply plugin: "io.spring.dependency-management"
+    dependencyManagement {
+        dependencies {
+            imports {
+                mavenBom "org.springframework.boot:spring-boot-dependencies:2.7.1"
+            }
+            dependency "com.google.guava:guava:${Versions.guava}"
+        }
+    }
+}
