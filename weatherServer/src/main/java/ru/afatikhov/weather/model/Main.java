@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Main {
-    private Integer temp;
+    private int temp;
 
     @JsonProperty("feels_like")
-    private Integer feelsLike;
+    private int feelsLike;
 }

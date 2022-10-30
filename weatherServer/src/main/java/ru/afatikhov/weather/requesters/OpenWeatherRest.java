@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import ru.afatikhov.weather.enums.Message;
 import ru.afatikhov.weather.exception.OpenWeatherApiException;
 import ru.afatikhov.weather.model.WeatherByDay;
 import ru.afatikhov.weather.model.WeatherNow;
@@ -19,13 +20,21 @@ public class OpenWeatherRest implements WeatherRest {
     private final MessageParser<WeatherByDay> parserByDay;
 
     @Override
-    public String getNowWeather(String url) throws OpenWeatherApiException {
-        return parser.parse(getForObject(url, WeatherNow.class));
+    public String getNowWeather(String url) {
+        try {
+            return parser.parse(getForObject(url, WeatherNow.class));
+        } catch (OpenWeatherApiException ex) {
+            return Message.API_ERROR.getInstance();
+        }
     }
 
     @Override
-    public String getWeatherByDay(String url) throws OpenWeatherApiException {
-        return parserByDay.parse(getForObject(url, WeatherByDay.class));
+    public String getWeatherByDay(String url) {
+        try {
+            return parserByDay.parse(getForObject(url, WeatherByDay.class));
+        } catch (OpenWeatherApiException ex) {
+            return Message.API_ERROR.getInstance();
+        }
     }
 
     private <T> T getForObject(String url, Class<T> clazz) throws OpenWeatherApiException {
