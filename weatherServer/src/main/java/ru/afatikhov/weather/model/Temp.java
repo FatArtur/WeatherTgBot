@@ -4,14 +4,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-
 @Getter
 @Setter
 @NoArgsConstructor
 public class Temp {
-    private Integer day;
-    private Integer min;
-    private Integer max;
-    private Integer night;
+    private int day;
+    private int min;
+    private int max;
+    private int night;
 }
