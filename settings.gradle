@@ -1,4 +1,0 @@
-rootProject.name = 'WeatherTgBot'
-include 'tgBot'
-include 'weatherServer'
-
