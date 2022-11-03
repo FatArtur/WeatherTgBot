@@ -1,0 +1,13 @@
+bot:
+  name: -------------
+  token: -------------
+api:
+  weather_now: http://localhost:8081/weather/api/1.0/%s
+  weather_by_date_now: http://localhost:8081/weather/api/1.0/%s/%s
+
+spring:
+  main:
+    log-startup-info: true
+
+server:
+  port: 8082
