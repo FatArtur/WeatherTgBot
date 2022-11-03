@@ -11,13 +11,9 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 public class Day {
-    private int dt;
+    private Date dt;
     private String description;
     private Temp temp;
     @JsonProperty("feels_like")
     private FeelsLike feelsLike;
-
-    public Date getDate() {
-        return new Date(dt * 1000L);
-    }
 }

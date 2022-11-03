@@ -11,6 +11,6 @@ import java.util.List;
 @NoArgsConstructor
 public class WeatherByDay {
     private City city;
-    private int cnt;
+    private Integer cnt;
     private List<Day> list;
 }
